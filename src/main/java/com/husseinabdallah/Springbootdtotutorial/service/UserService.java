@@ -15,6 +15,11 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public User addUser(User user){
+        System.out.println(user);
+        return userRepository.save(user);
+    }
+
     public List<UserLocationDTO> getAllUsersLocation(){
         return userRepository.findAll()
                 .stream()
